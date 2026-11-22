@@ -4,6 +4,16 @@ on: # rebuild any PRs and main branch changes
   push:
 
 jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.x
+      - name: Run C# unit tests
+        run: dotnet test tests/VersionPack.Tests/VersionPack.Tests.csproj --configuration Release
+
   testNew:
     runs-on: ubuntu-latest
     steps: 
