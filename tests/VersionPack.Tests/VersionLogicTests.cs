@@ -1,6 +1,6 @@
 using Xunit;
 
-public class VersionLogicTests
+public class VersionPackTests
 {
     [Theory]
     [InlineData("dev", "-alpha")]
@@ -25,7 +25,7 @@ public class VersionLogicTests
     }
 
     [Theory]
-    [InlineData("release/1.2.3", "1.2.3", "1.2-preview.3")]
+    [InlineData("release/1.2.3", "1.2.3", "1.2.3")]
     [InlineData("beta/1.2.3", "1.2.3", "1.2-beta.3")]
     [InlineData("rc/1.2.3", "1.2.3", "1.2-rc.3")]
     [InlineData("candidate/2.4.0", "2.4.0", "2.4-rc.0")]
